@@ -13,9 +13,7 @@ public class StudentController {
     private final StudentService service;
 
     @PostMapping
-    Mono<Student> save(
-            @RequestBody Student student
-    ){
+    Mono<Student> save(@RequestBody Student student){
         return service.save(student);
     }
 
@@ -25,9 +23,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public Mono<Student> findById(
-            @PathVariable("id") Integer id
-    ){
+    public Mono<Student> findById(@PathVariable("id") Integer id){
         return service.findById(id);
     }
 

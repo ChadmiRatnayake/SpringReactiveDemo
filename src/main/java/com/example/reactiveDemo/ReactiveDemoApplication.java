@@ -15,9 +15,7 @@ public class ReactiveDemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(
-			StudentService service
-	){
+	public CommandLineRunner commandLineRunner(StudentService service){
 		return args -> {
 			for (int i=0; i<100; i++){
 				service.save(
@@ -26,7 +24,7 @@ public class ReactiveDemoApplication {
 								.lastName("Teddy " + i)
 								.age(i)
 								.build()
-				).subscribe(); // student returns a mono so we have to subscribe to save all data at once
+				).subscribe();
 			}
 		};
 	}
