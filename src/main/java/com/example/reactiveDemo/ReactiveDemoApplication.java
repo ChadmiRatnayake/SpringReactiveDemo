@@ -26,7 +26,7 @@ public class ReactiveDemoApplication {
 								.lastName("Teddy " + i)
 								.age(i)
 								.build()
-				);
+				).subscribe(); // student returns a mono so we have to subscribe to save all data at once
 			}
 		};
 	}
